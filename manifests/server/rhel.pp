@@ -6,6 +6,7 @@ class ntp::server::rhel {
   service {"ntpd":
     ensure => running,
     enable => true,
+    require => Package['ntp'],
   }
 
   file {"/etc/ntp.conf":

@@ -7,6 +7,7 @@ class ntp::server::debian {
     ensure => running,
     enable => true,
     pattern => "/usr/sbin/ntpd",
+    require => Package['ntp'],
   }
 
   file {"/etc/ntp.conf":
